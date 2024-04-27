@@ -1,0 +1,35 @@
+<ion-content [fullscreen]="true">
+  <div class="header">
+    <ion-title class="title">Bem Vindo!</ion-title>
+    <p class="subTitle">Insira seu login para acessar sua conta</p>
+  </div>
+  
+  <form>
+    <div class="ion-padding">
+      <ion-item>
+        <ion-input placeholder="seu Login" class="input"></ion-input>
+        <ion-icon name="person-outline"></ion-icon>
+      </ion-item>
+
+      <ion-item>
+        <ion-icon color="primary" slot="end" (click)="showPassword()"
+        [name]="type ? 'eye-off-outline' : 'eye-outline'"></ion-icon>
+        <ion-input [type]="type ? 'text' : 'password'" placeholder="Digite sua senha" class="input"></ion-input>
+      </ion-item>
+     </div>
+  
+      <div class="forgotPassword">
+        <a [routerLink]="['/reset-password']" style="color:blue"> Esqueceu sua senha?</a>
+      </div>
+      <div class="signupLink">
+        <p>Novo membro?<a style="color:blue" [routerLink]="['/signup']">Cadastrar agora</a></p>
+      </div>
+    
+    <ion-fab vertical="bottom" horizontal="end" style="margin-bottom: 30px;">
+      <ion-fab-button [routerLink]="['/feed']">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </ion-fab-button>
+  </ion-fab>
+  </form>
+  </ion-content>
+  
